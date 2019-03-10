@@ -1,0 +1,28 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bulma
+@import url('./../../node_modules/bulma/css/bulma.min.css');
+
+// Helpers
+@import url('./helpers.scss');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body,
+#app, main {
+  min-height: 100vh;
+}
+
+// Quizzes
+.card {
+  width: 25%;  
+}
