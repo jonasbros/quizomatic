@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuizController extends Controller
 {
@@ -25,7 +26,12 @@ class QuizController extends Controller
      */
     public function create()
     {
-        return view('make_quiz');
+        if(Auth::check()) {
+            return view('make_quiz');
+        }else {
+            return redirect('login');
+        }
+        
     }
 
     /**

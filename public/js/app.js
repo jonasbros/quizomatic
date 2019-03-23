@@ -166,7 +166,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      questions: [],
+      questionType: 'multiple'
+    };
+  },
+  methods: {
+    newQuestion: function newQuestion() {
+      this.questions.push({
+        type: this.questionType
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -1486,65 +1533,157 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "q__make-container" }, [
+    _c("form", { attrs: { action: "", method: "post" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "q__make-questions p-1" }, [
+        _c("div", { staticClass: "q__questions-container" }, [
+          _c(
+            "div",
+            { staticClass: "q__questions-inner" },
+            _vm._l(_vm.questions, function(question, i) {
+              return _c("div", { staticClass: "q__question-item" }, [
+                _vm._v("\n                        test\n                    ")
+              ])
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "control columns" }, [
+            _c("div", { staticClass: "column is-one-fifth" }, [
+              _c("label", { attrs: { for: "question_type" } }, [
+                _vm._v(
+                  "\n                            Question Type:\n                            "
+                ),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.questionType,
+                        expression: "questionType"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: { name: "question_type", id: "question_type" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.questionType = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "multiple" } }, [
+                      _vm._v("Multiple Choice")
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-half" }, [
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.newQuestion()
+                    }
+                  }
+                },
+                [_vm._v("+ Question")]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "q__make-container" }, [
-      _c("form", { attrs: { action: "", method: "post" } }, [
-        _c("div", { staticClass: "q__make-header" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("div", { staticClass: "control" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(
-                  "\n                        Title: \n                        "
-                ),
-                _c("input", {
-                  staticClass: "input",
-                  attrs: { type: "text", name: "", id: "" }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("div", { staticClass: "control" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(
-                  "\n                        Description: \n                        "
-                ),
-                _c("textarea", {
-                  staticClass: "input",
-                  attrs: {
-                    type: "text",
-                    name: "",
-                    id: "",
-                    rows: "3",
-                    cols: "3"
-                  }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("div", { staticClass: "control" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(
-                  "\n                        Category: \n                        "
-                ),
-                _c("input", {
-                  staticClass: "input",
-                  attrs: { type: "text", name: "", id: "" }
-                })
-              ])
-            ])
+    return _c("div", { staticClass: "q__make-header p-1" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("label", { attrs: { for: "" } }, [
+            _vm._v(
+              "\n                        Title: \n                        "
+            ),
+            _c("input", {
+              staticClass: "input",
+              attrs: { type: "text", name: "", id: "" }
+            })
           ])
-        ]),
-        _vm._v(" "),
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("label", { attrs: { for: "" } }, [
+            _vm._v(
+              "\n                        Description: \n                        "
+            ),
+            _c("textarea", {
+              staticClass: "input",
+              attrs: { type: "text", name: "", id: "", rows: "3", cols: "3" }
+            })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("label", { attrs: { for: "" } }, [
+            _vm._v(
+              "\n                        Category: \n                        "
+            ),
+            _c(
+              "select",
+              {
+                staticClass: "input",
+                attrs: { name: "category", id: "category" }
+              },
+              [
+                _c("option", { attrs: { value: "science" } }, [
+                  _vm._v("Science")
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field p-1" }, [
+      _c("div", { staticClass: "control" }, [
         _c(
           "button",
           { staticClass: "button is-primary", attrs: { type: "submit" } },
@@ -13971,8 +14110,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /projects/quizomatic/quizomatic/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /projects/quizomatic/quizomatic/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! P:\Project\quizomatic\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! P:\Project\quizomatic\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -9,7 +9,7 @@
 @import url('./../../node_modules/bulma/css/bulma.min.css');
 
 // Helpers
-@import url('./helpers.scss');
+@import 'helpers';
 
 * {
   padding: 0;
